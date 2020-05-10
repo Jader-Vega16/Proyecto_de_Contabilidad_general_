@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Ubiety.StyleCop.0.0.5\build\Ubiety.StyleCop.props" Condition="Exists('..\packages\Ubiety.StyleCop.0.0.5\build\Ubiety.StyleCop.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{ED78AEC6-2615-43FF-9C63-578BA5E74B3A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Contabilidad_General</RootNamespace>
+    <AssemblyName>Contabilidad_General</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+    <Reference Include="Ubiety.Logging.Core">
+      <HintPath>..\packages\Ubiety.Logging.Core.1.2.2\lib\net452\Ubiety.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ubiety.StyleCop">
+      <HintPath>..\packages\Ubiety.StyleCop.0.0.5\lib\netstandard2.0\Ubiety.StyleCop.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Menu_Principal.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Menu_Principal.cs" />
+    <Compile Include="Generar_Empresa.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Generar_Empresa.cs" />
+    <Compile Include="Balance_General.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Balance_General.cs" />
+    <Compile Include="Balance_de_Comprobacion.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Balance_de_Comprobacion.cs" />
+    <Compile Include="Control_de_Empresa.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Empresa.cs" />
+    <Compile Include="Control_de_Empleados.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Empleados.cs" />
+    <Compile Include="Control_de_Usuarios_con_Rol.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Usuarios_con_Rol.cs" />
+    <Compile Include="Control_de_Monedas.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Monedas.cs" />
+    <Compile Include="Control_de_Usuarios.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Usuarios.cs" />
+    <Compile Include="Control_de_Periodos_Contables.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Periodos_Contables.cs" />
+    <Compile Include="Control_de_Catalogo_de_Cuentas.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Catalogo_de_Cuentas.cs" />
+    <Compile Include="Control_de_Asientos_Contables.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Asientos_Contables.cs" />
+    <Compile Include="Control_de_Libro_Diario.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Libro_Diario.cs" />
+    <Compile Include="Control_de_Libro_Mayor.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Control_de_Libro_Mayor.cs" />
+    <Compile Include="Entidades\Moneda.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Entidades\Empresa.cs" />
+    <Compile Include="Entidades\Periodo_contable.cs" />
+    <Compile Include="Entidades\Catalogo_de_cuenta.cs" />
+    <Compile Include="Entidades\Usuario_con_rol.cs" />
+    <Compile Include="Entidades\Asiento_contable.cs" />
+    <Compile Include="Entidades\Libro_mayor.cs" />
+    <Compile Include="Entidades\Opcion.cs" />
+    <Compile Include="Entidades\Rol.cs" />
+    <Compile Include="Entidades\Rol_opcion.cs" />
+    <Compile Include="Entidades\Tipo_de_naturaleza.cs" />
+    <Compile Include="Entidades\Libro_diario.cs" />
+    <Compile Include="Entidades\Balance_general.cs" />
+    <Compile Include="Entidades\Balance_de_comprobacion.cs" />
+    <Compile Include="Datos\conexion.cs" />
+    <Compile Include="Datos\DTEmpleados.cs" />
+    <Compile Include="Utilidades\Mensaje.cs" />
+    <Compile Include="Datos\DTEmpresa.cs" />
+    <Compile Include="Datos\DTMoneda.cs" />
+    <Compile Include="Datos\DTUsuario.cs" />
+    <Compile Include="Datos\DTPeriodo_Contable.cs" />
+    <Compile Include="Datos\DTCatalogoCuentas.cs" />
+    <Compile Include="Datos\DTUsuario_rol.cs" />
+    <Compile Include="Datos\DTAsiento_Contable.cs" />
+    <Compile Include="Datos\DTLibro_Diario.cs" />
+    <Compile Include="Datos\DTLibro_Mayor.cs" />
+    <Compile Include="Menu_de_Asientos_Contables.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Menu_de_Asientos_Contables.cs" />
+    <Compile Include="Menu_de_Libros_diarios.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Menu_de_Libros_diarios.cs" />
+    <Compile Include="Menu_de_Libros_Mayores.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Menu_de_Libros_Mayores.cs" />
+    <Compile Include="Agregar_Asiento_contable.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Agregar_Asiento_contable.cs" />
+    <Compile Include="Agregar_Libro_diario.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Agregar_Libro_diario.cs" />
+    <Compile Include="Agregar_Libro_mayor.cs" />
+    <Compile Include="gtk-gui\Contabilidad_General.Agregar_Libro_mayor.cs" />
+    <Compile Include="Datos\DTTipo_naturaleza.cs" />
+    <Compile Include="Datos\DTRol.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\" />
+    <Folder Include="Negocio\" />
+    <Folder Include="Datos\" />
+    <Folder Include="Utilidades\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
